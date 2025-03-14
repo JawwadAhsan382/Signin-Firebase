@@ -14,42 +14,60 @@ let getSBTN=document.getElementById('s-button')
 let getLBTN=document.getElementById('l-button')
 if(getSBTN){
     getSBTN.addEventListener('click',()=>{
-        let email=document.getElementById('s-email').value
-        let password=document.getElementById('s-password').value
-        createUserWithEmailAndPassword(auth, email, password)
+        let email=document.getElementById('s-email')
+        let password=document.getElementById('s-password')
+        createUserWithEmailAndPassword(auth, email.value, password.value)
       .then((userCredential) => {
         const user = userCredential.user;
         Swal.fire({
           title: "Good job!",
           text: "You Signed Up",
-          icon: "success"
-        });
+          icon: "success",
+          width: "60%",
+          position:"center"
+        })
+        .then((data)=>{
+          email.value=''
+          if(data.isConfirmed){
+            location.href='login.html'
+          }
+        })
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
+        console.log(errorCode, errorMessage)
         Swal.fire({
           icon: "error",
           title: "Oops...",
-          text: errorCode+' '+errorMessage,
-          // footer: '<a href="#">Why do I have this issue?</a>'
-        });
+          text: errorCode,
+          width: "60%",
+          position:"center"
+        })
       });
     })
 }
 if(getLBTN){
     getLBTN.addEventListener('click',()=>{
-        let email=document.getElementById('l-email').value
-        let password=document.getElementById('l-password').value
+        let email=document.getElementById('l-email')
+        let password=document.getElementById('l-password')
 
-signInWithEmailAndPassword(auth, email, password)
+signInWithEmailAndPassword(auth, email.value, password.value)
   .then((userCredential) => {
     const user = userCredential.user;
     Swal.fire({
       title: "Good job!",
       text: "You Logged In",
-      icon: "success"
-    });
+      icon: "success",
+      width: "60%",
+      position:"center"
+    })
+    .then((data)=>{
+      if(data.isConfirmed){
+        email.value=''
+        location.href='welcome.html'
+      }
+    })
   })
   .catch((error) => {
     const errorCode = error.code;
@@ -57,9 +75,10 @@ signInWithEmailAndPassword(auth, email, password)
     Swal.fire({
       icon: "error",
       title: "Oops...",
-      text: errorCode+' '+errorMessage,
-      // footer: '<a href="#">Why do I have this issue?</a>'
-    });
+      text: errorCode,
+      width: "60%",
+      position:"center"
+    })
   });
 })
 }
