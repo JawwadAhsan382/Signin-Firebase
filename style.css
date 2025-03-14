@@ -1,0 +1,59 @@
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+p{
+    width: 400px;
+    text-align: center;
+}
+.main{
+    width: 400px;
+    height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-evenly;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+.main>input{
+    width: 80%;
+}
+.main>button{
+    width: 30%;
+    background-color: black;
+    color: white;
+}
+@media screen and (max-width:250px) {
+    .main{
+        margin: auto;
+        width: 200px;
+        height: 100px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: space-evenly;
+        background-color: whitesmoke;
+        border-radius: 10px;
+        border: 2px solid black;
+    }
+    .main>button{
+        width: 40%;
+        background-color: black;
+        color: white;
+    }
+    .container{
+        width: 100%;
+        height: 50vh;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+    }
+}
