@@ -30,7 +30,7 @@ p{
     background-color: black;
     color: white;
 }
-@media screen and (max-width:320px) {
+@media screen and (max-width:350px) {
     .main{
         margin: auto;
         width: 200px;
