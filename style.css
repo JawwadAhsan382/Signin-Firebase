@@ -40,21 +40,13 @@ p{
         align-content: center;
     }
     .main{
-        margin: auto;
         width: 200px;
-        height: 100px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-content: space-evenly;
-        /* background-color: whitesmoke; */
-        border-radius: 10px;
-        border: 2px solid black;
         background-color: aqua;
+    }
+    p{
+        width: 200px;
     }
     .main>button{
         width: 40%;
-        background-color: black;
-        color: white;
     }
 }
