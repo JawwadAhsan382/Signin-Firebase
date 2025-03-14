@@ -41,7 +41,10 @@ p{
     }
     .main{
         width: 200px;
-        background-color: rgb(0, 255, 119);
+        background-color: whitesmoke;
+    }
+    .main>input{
+        background-color: white;
     }
     p{
         width: 200px;
