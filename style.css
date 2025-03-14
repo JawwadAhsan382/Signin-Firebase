@@ -30,7 +30,7 @@ p{
     background-color: black;
     color: white;
 }
-@media screen and (max-width:360px) {
+@media screen and (max-width:380px) {
     .container{
         width: 100%;
         height: 50vh;
